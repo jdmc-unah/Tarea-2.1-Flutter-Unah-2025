@@ -47,7 +47,9 @@ class _MyTextFieldState extends State<MyTextField> {
 
         TextField(
           controller: widget.controller,
-          obscureText: widget.activarSuffix == true ? mostrarContra : false,
+          obscureText: widget.activarSuffix == true
+              ? mostrarContra
+              : false, //si activar suffix fuese nulo entonces por defecto va a mostrar lo que se escribe siempre
           keyboardType: TextInputType.text,
           decoration: InputDecoration(
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
