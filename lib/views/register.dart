@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:login_page_jdmc/validations/registerVal.dart';
-import 'package:login_page_jdmc/widgets/myTextField.dart';
+import 'package:login_page_jdmc/widgets/my_text_field.dart';
 
 class Register extends StatelessWidget {
   Register({super.key});
@@ -68,8 +68,7 @@ class Register extends StatelessWidget {
                 prefixIcon: Icons.lock_outline_sharp,
                 topText: 'Contraseña ',
                 hintText: 'Ingrese la contraseña',
-                ocultarEntrada: true,
-                sufixIcon: Icons.visibility_off_outlined,
+                activarSuffix: true,
                 controller: pwController,
               ),
 

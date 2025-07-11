@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:login_page_jdmc/widgets/myTextField.dart';
+import 'package:login_page_jdmc/widgets/my_text_field.dart';
 import 'package:login_page_jdmc/validations/loginVal.dart';
 
 class Login extends StatelessWidget {
   Login({super.key});
 
   final emailController = TextEditingController();
+
   final pwController = TextEditingController();
 
   @override
@@ -48,8 +49,7 @@ class Login extends StatelessWidget {
                 prefixIcon: Icons.lock_outline_sharp,
                 topText: 'Contraseña ',
                 hintText: 'Ingrese la contraseña',
-                ocultarEntrada: true,
-                sufixIcon: Icons.visibility_off_outlined,
+                activarSuffix: true,
                 controller: pwController,
               ),
 
