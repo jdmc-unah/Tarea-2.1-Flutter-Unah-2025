@@ -34,7 +34,11 @@ class MainApp extends StatelessWidget {
           GoRoute(
             name: 'home',
             path: '/home',
-            builder: (context, state) => Homepage(),
+            builder: (context, state) {
+              final data = state.extra as Map<String, String>;
+
+              return Homepage(data: data);
+            },
           ),
         ],
       ),

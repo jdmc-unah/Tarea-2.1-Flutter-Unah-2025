@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:login_page_jdmc/data/users.dart';
 import 'package:login_page_jdmc/widgets/my_text_field.dart';
 import 'package:login_page_jdmc/validations/loginVal.dart';
 
@@ -72,7 +73,8 @@ class Login extends StatelessWidget {
                     );
 
                     if (error == '') {
-                      context.goNamed('home');
+                      Map<String, String> data = usuarios[0];
+                      context.goNamed('home', extra: data);
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(

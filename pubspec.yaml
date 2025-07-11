@@ -22,3 +22,5 @@ flutter:
   assets:
     - assets/animal.png
     - assets/empty.png
+    - assets/profpic.jpg
+    - assets/spidey.png
