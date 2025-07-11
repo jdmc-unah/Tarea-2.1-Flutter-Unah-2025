@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:login_page_jdmc/widgets/myTextField.dart';
+import 'package:login_page_jdmc/validations/loginVal.dart';
 
 class Login extends StatelessWidget {
   Login({super.key});
@@ -64,7 +65,27 @@ class Login extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    String error = validaInicioSesion(
+                      emailController.text,
+                      pwController.text,
+                    );
+
+                    if (error == '') {
+                      context.goNamed('home');
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          backgroundColor: Colors.red,
+                          action: SnackBarAction(
+                            label: 'Cerrar',
+                            onPressed: () {},
+                          ),
+                          content: Text(error),
+                        ),
+                      );
+                    }
+                  },
                   child: Text('Iniciar Sesión'),
                 ),
               ),
